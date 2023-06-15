@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+{% block title %}Nouvelles{% endblock %}
+{% block content %}
+
+
+
+<div class="detail_view">
+<h1 id="yt">{{ article.title }}</h1>
+<p id="data">{{ article.date }}</p>
+<p id="text-article">{{ article.full_text }}</p>
+<p class="alert alert-info" id="aut">Article écrit  par: {{ author.username }}</p>
+    {% if user.is_staff %}
+        <a href="{% url 'news-delete' article.id  %}" class="btn btn-danger btn-style sta">Supprimer l'article</a>
+    {% endif %}
+    {% if user.is_staff %}
+        <a href="{% url 'news-update' article.id  %}" class="btn btn-info btn-style sta">Modifier l'article</a>
+    {% endif %}
+</div>
+
+
+
+{% endblock %}

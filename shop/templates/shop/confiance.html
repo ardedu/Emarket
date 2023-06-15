@@ -1,0 +1,10 @@
+{% extends 'main/layout.html' %}
+{% block title %}Boss pas confiance{% endblock %}
+{% block content %}
+
+<p class="alert alert-danger" id="confiance" >Vous devez vous connecter pour accéder à la boutique</p>
+<a href="{% url 'login' %}" class="btn btn-success btn-style fone">Me connecter</a>
+<a href="{% url 'register' %}" class="btn btn-success btn-style fone">Je n'ai pas de compte</a>
+
+
+{% endblock %}
