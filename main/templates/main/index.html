@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+{% block title %}Accuiel{% endblock %}
+{% block content %}
+    <h3 class="alert alert-danger" id="hello">Bienvenue sur notre site</h3>
+    <h5 class="alert alert-warning" id="slogan">Que de la Frappe à tout les prix</h5>
+    
+    {% if user.is_authenticated %}
+        <h4 class="alert alert-success" id="blas">Connecté en tant que: {{ user }}</h4>
+        <a href="{% url 'shop' %}" class="btn btn-success btn-style" id="notre">Acceder à la boutique</a>
+        <a href="{% url 'logout' %}" class="btn btn-danger" id="quitter">Se déconnecter</a>
+    {% else %}
+        <h4 class="alert alert-success" id="ka">Bienvenue</h4>
+        <a href="{% url 'shop' %}" class="btn btn-success btn-style fone">Acceder à la boutique</a>
+        <a href="{% url 'login' %}" class="btn btn-success btn-style fone">Me connecter</a>
+        <a href="{% url 'register' %}" class="btn btn-success btn-style fone">M'inscrire</a>
+    {% endif %}
+{% endblock %}
